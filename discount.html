@@ -7,7 +7,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Finance Manager | Toko Alat Tulis</title>
+  <title>Discount | Toko Alat Tulis</title>
 
   <meta name="description" content="" />
 
@@ -32,11 +32,6 @@
   <!-- Vendors CSS -->
   <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
-
-  <!-- Datpicker -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
@@ -86,8 +81,8 @@
           </li>
 
           <!-- Purchase Order -->
-          <li class="menu-item ">
-            <a href="purchase-order.html" class="menu-link">
+          <li class="menu-item">
+            <a href="#" class="menu-link">
               <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i>
               <div data-i18n="Purchase Order">Purchase Order</div>
             </a>
@@ -102,8 +97,8 @@
           </li>
 
           <!-- Finance Manager -->
-          <li class="menu-item active">
-            <a href="#" class="menu-link">
+          <li class="menu-item">
+            <a href="finance.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-folder-open"></i>
               <div data-i18n="Finance Manager">Finance Manager</div>
             </a>
@@ -126,8 +121,8 @@
           </li>
 
           <!-- Discount -->
-          <li class="menu-item">
-            <a href="discount.html" class="menu-link">
+          <li class="menu-item active">
+            <a href="#" class="menu-link">
               <i class="menu-icon tf-icons bx bx-basket"></i>
               <div data-i18n="Discount">Discount</div>
             </a>
@@ -272,6 +267,7 @@
             </ul>
           </div>
         </nav>
+
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -284,141 +280,174 @@
                 <div class="d-sm-flex py-3">
                   <h4 class="fw-bold mb-0">
                     <span class="text-muted fw-light">Dashboard / </span>
-                    Finance Manager
+                    Discount
                   </h4>
                 </div>
               </div>
+              <div class="col-12 col-md-6 align-self-center text-center text-sm-end">
+                <button type="button" class="btn btn-primary">
+                  <span class="tf-icons bx bx-plus-circle"></span>
+                  Add Discount
+                </button>
+              </div>
             </div>
 
-            <!-- Filter by Date -->
-            <div class="row mb-4">
-              <div class="col">
-                <div class="card p-2">
-                  <div class="card-title">
-                    <h4 class="fw-bold text-center mt-4 mb-0">
-                      Choose date to set parameters
-                    </h4>
+            <!-- Table Order -->
+            <div class="card py-3">
+              <div class="row px-3">
+                <!-- Search -->
+                <div class="col">
+                  <div class="d-flex align-items-center">
+                    <i class="bx bx-search fs-4 lh-0"></i>
+                    <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
+                      aria-label="Search..." />
                   </div>
-                  <div class="card-body p-3">
-                    <div class="row">
-                      <div class="col-12 col-md-5">
-                        <form>
-                          <div class="form-group mb-3">
-                            <div class="input-group date" id="datepickerFrom">
-                              <input type="text" class="form-control" placeholder="Select Date">
-                              <span class="input-group-append input-group-text">
-                                <i class="fa fa-calendar"></i>
-                              </span>
-                            </div>
+                </div>
+                <!-- Button Delete -->
+                <div class="col-2 text-end">
+                  <select class="form-select" id="sortBySelect" aria-label="Sort by">
+                    <option selected disabled value="">Sort by</option>
+                    <option value="1">Discount Type</option>
+                    <option value="2">Status Active</option>
+                    <option value="3">Status Non Active</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Table Body -->
+              <div class="table-responsive text-nowrap py-3">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%;">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </th>
+                      <th style="width: 30%;">Discount Name</th>
+                      <th style="width: 5%;">Discount Type</th>
+                      <th style="width: 30%;">Amount</th>
+                      <th style="width: 15%;">Product</th>
+                      <th style="width: 10%;">Status</th>
+                      <th style="width: 5%;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td><strong>Discount 1</strong></td>
+                      <td>Percentage (%)</td>
+                      <td>15%</td>
+                      <td>Product 1</td>
+                      <td><span class="badge bg-label-success">Active</span></td>
+                      <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-edit"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
+                              edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-x-trash me-1"></i>
+                              Delete</a>
                           </div>
-                        </form>
-                      </div>
-                      <div class="col-12 col-md-5">
-                        <form>
-                          <div class="form-group mb-3">
-                            <div class="input-group date" id="datepickerTo">
-                              <input type="text" class="form-control" placeholder="Select Date">
-                              <span class="input-group-append input-group-text">
-                                <i class="fa fa-calendar"></i>
-                              </span>
-                            </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td><strong>Discount 2</strong></td>
+                      <td>Fixed (Rp)</td>
+                      <td>Rp 5,500</td>
+                      <td>Product 2</td>
+                      <td><span class="badge bg-label-success">Active</span></td>
+                      <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-edit"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
+                              edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-x-trash me-1"></i>
+                              Delete</a>
                           </div>
-                        </form>
-                      </div>
-                      <div class="col-12 col-md-2 mb-3">
-                        <button type="button" class="btn btn-primary w-100">
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td><strong>Discount 3</strong></td>
+                      <td>Percentage (%)</td>
+                      <td>1%</td>
+                      <td>Product 3</td>
+                      <td><span class="badge bg-label-danger">Expired</span></td>
+                      <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-edit"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
+                              edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-x-trash me-1"></i>
+                              Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </div>
+                      </td>
+                      <td><strong>Discount 4</strong></td>
+                      <td>Fixed (Rp)</td>
+                      <td>Rp 23,300</td>
+                      <td>Product 4</td>
+                      <td><span class="badge bg-label-danger">Expired</span></td>
+                      <td>
+                        <div class="dropdown">
+                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                            <i class="bx bx-edit"></i>
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
+                              edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-x-trash me-1"></i>
+                              Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot class="table-border-bottom-0">
+                    <tr>
+                      <th></th>
+                      <th>Discount Name</th>
+                      <th>Discount Type</th>
+                      <th>Amount</th>
+                      <th>Product</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
-            <!-- Filter by Date -->
-
-            <!-- Query by date -->
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex py-3 px-4">
-                      <div class="avatar flex-shrink-0 me-3 p-4">
-                        <span class="avatar-initial rounded bg-label-info"><i
-                            class="bx bx-sm bx-shopping-bag"></i></span>
-                      </div>
-                      <div>
-                        <small class="text-muted d-block mb-1">Total Income</small>
-                        <div class="d-flex align-items-center">
-                          <h3 class="mb-0 me-1">Rp 1,053,600,370</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex py-3 px-4">
-                      <div class="avatar flex-shrink-0 me-3 p-4">
-                        <span class="avatar-initial rounded bg-label-warning"><i
-                            class="bx bx-sm bx-cart-alt"></i></span>
-                      </div>
-                      <div>
-                        <small class="text-muted d-block mb-1">Total Sell Transaction</small>
-                        <div class="d-flex align-items-center">
-                          <h3 class="mb-0 me-1">
-                            999999
-                            <small>Transactions</small>
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex py-3 px-4">
-                      <div class="avatar flex-shrink-0 me-3 p-4">
-                        <span class="avatar-initial rounded bg-label-danger"><i
-                            class="bx bx-sm bx-log-in-circle"></i></span>
-                      </div>
-                      <div>
-                        <small class="text-muted d-block mb-1">Total Outcome</small>
-                        <div class="d-flex align-items-center">
-                          <h3 class="mb-0 me-1">Rp 1,053,600,370</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex py-3 px-4">
-                      <div class="avatar flex-shrink-0 me-3 p-4">
-                        <span class="avatar-initial rounded bg-label-success"><i class="bx bx-sm bx-dollar"></i></span>
-                      </div>
-                      <div>
-                        <small class="text-muted d-block mb-1">Total Buy Transaction</small>
-                        <div class="d-flex align-items-center">
-                          <h3 class="mb-0 me-1">
-                            999999
-                            <small>Transactions</small>
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Query by date -->
-
+            <!-- Table Order  -->
           </div>
 
           <!-- / Content -->
@@ -482,16 +511,6 @@
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-  <!-- Datepicker -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $('#datepickerFrom').datepicker();
-      $('#datepickerTo').datepicker();
-    });
-  </script>
 </body>
 
 </html>

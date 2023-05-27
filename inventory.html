@@ -106,10 +106,27 @@
 
           <!-- History -->
           <li class="menu-item">
-            <a href="history.html" class="menu-link">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons bx bx-history"></i>
               <div data-i18n="History">History</div>
             </a>
+            <ul class="menu-sub">
+              <li class="menu-item">
+                <a href="history.html" class="menu-link">
+                  <div data-i18n="Sales">Sales History</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="restock-history.html" class="menu-link">
+                  <div data-i18n="Restock">Restock History</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="other-history.html" class="menu-link">
+                  <div data-i18n="Other">Other History</div>
+                </a>
+              </li>
+            </ul>
           </li>
 
           <!-- Supplier -->
@@ -148,7 +165,7 @@
           </li>
 
           <!-- Capital History -->
-          <li class="menu-item">
+          <li class="menu-item mb-5">
             <a href="capital.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-history"></i>
               <div data-i18n="Capital History">Capital History</div>
@@ -267,7 +284,6 @@
             </ul>
           </div>
         </nav>
-
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -285,11 +301,11 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 align-self-center text-center text-sm-end">
-                <button type="button" class="btn btn-primary me-3">
+                <button type="button" class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#newProduct">
                   <span class="tf-icons bx bx-plus-circle"></span>
                   New Product
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newSubstract">
                   <span class="tf-icons bx bx-plus-circle"></span>
                   New Substract
                 </button>
@@ -343,19 +359,21 @@
                       <td>Category 1</td>
                       <td>Rp 85,000</td>
                       <td>Rp 88,000</td>
-                      <td class="text-truncate" style="max-width: 50px">It is a long established fact that a reader
-                        will be distracted</td>
-                      <td>
-                        205
+                      <td class="text-truncate" style="max-width: 50px">
+                        It is a long established fact that reader will be distracted
                       </td>
+                      <td>205</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-edit"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                              Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
+                              data-bs-target="#editProduct">
+                              <i class="bx bx-edit-alt me-1"></i>
+                              Edit
+                            </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
                               Delete</a>
                           </div>
@@ -375,17 +393,18 @@
                       <td class="text-truncate" style="max-width: 50px">
                         packages and web page editors now use Lorem Ipsum as their default model text
                       </td>
-                      <td>
-                        1,853
-                      </td>
+                      <td>1,853</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-edit"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                              Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
+                              data-bs-target="#editProduct">
+                              <i class="bx bx-edit-alt me-1"></i>
+                              Edit
+                            </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
                               Delete</a>
                           </div>
@@ -405,17 +424,18 @@
                       <td class="text-truncate" style="max-width: 50px">
                         There are many variations of passages of Lorem Ipsum available
                       </td>
-                      <td>
-                        978
-                      </td>
+                      <td>978</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-edit"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                              Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
+                              data-bs-target="#editProduct">
+                              <i class="bx bx-edit-alt me-1"></i>
+                              Edit
+                            </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
                               Delete</a>
                           </div>
@@ -435,17 +455,18 @@
                       <td class="text-truncate" style="max-width: 50px">
                         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
                       </td>
-                      <td>
-                        55
-                      </td>
+                      <td>55</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-edit"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                              Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
+                              data-bs-target="#editProduct">
+                              <i class="bx bx-edit-alt me-1"></i>
+                              Edit
+                            </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
                               Delete</a>
                           </div>
@@ -465,17 +486,18 @@
                       <td class="text-truncate" style="max-width: 50px">
                         The standard chunk of Lorem Ipsum used since the 1500s is reproduced
                       </td>
-                      <td>
-                        6,055
-                      </td>
+                      <td>6,055</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="bx bx-edit"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i>
-                              Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
+                              data-bs-target="#editProduct">
+                              <i class="bx bx-edit-alt me-1"></i>
+                              Edit
+                            </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
                               Delete</a>
                           </div>
@@ -497,9 +519,42 @@
                   </tfoot>
                 </table>
               </div>
+              <!-- Pagination -->
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="demo-inline-spacing">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item prev">
+                          <a class="page-link" href="javascript:void(0);"><i
+                              class="tf-icon bx bx-chevrons-left"></i></a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">2</a>
+                        </li>
+                        <li class="page-item active">
+                          <a class="page-link" href="javascript:void(0);">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">4</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">5</a>
+                        </li>
+                        <li class="page-item next">
+                          <a class="page-link" href="javascript:void(0);"><i
+                              class="tf-icon bx bx-chevrons-right"></i></a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
           <!-- / Content -->
 
           <!-- Footer -->
@@ -542,6 +597,218 @@
   </div>
   <!-- / Layout wrapper -->
 
+  <!-- Modal New Product -->
+  <div class="modal fade" id="newProduct" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCenterTitle">New Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input type="text" id="productName" class="form-control" placeholder="Enter Product Name" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" aria-label="Select Category">
+                <option selected disabled>-- Select Category --</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+                <option value="4">Category 4</option>
+                <option value="5">Category 5</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="stock" class="form-label">Stock</label>
+              <input type="number" id="stock" class="form-control" placeholder="ex: 99" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="buyPrice" class="form-label">Buy Price</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text">Rp</span>
+                <input type="number" id="buyPrice" class="form-control" placeholder="ex: 15000"
+                  aria-label="Buy Price" />
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="sellPrice" class="form-label">Sell Price</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text">Rp</span>
+                <input type="number" id="sellPrice" class="form-control" placeholder="ex: 20000"
+                  aria-label="Sell Price" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-0">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal New Substract -->
+  <div class="modal fade" id="newSubstract" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCenterTitle">New Substract</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="quantity" class="form-label">Qty</label>
+              <input type="number" id="quantity" class="form-control" placeholder="ex: 99" />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" aria-label="Select Category">
+                <option selected disabled>-- Select Category --</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+                <option value="4">Category 4</option>
+                <option value="5">Category 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-3">
+              <label for="product" class="form-label">Product</label>
+              <select class="form-select" id="product" aria-label="Select Product">
+                <option selected disabled>-- Select Product --</option>
+                <option value="1">Product 1</option>
+                <option value="2">Product 2</option>
+                <option value="3">Product 3</option>
+                <option value="4">Product 4</option>
+                <option value="5">Product 5</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-0">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit Product -->
+  <div class="modal fade" id="editProduct" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCenterTitle">Edit Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input type="text" id="productName" class="form-control" value="Product 1"
+                placeholder="Enter Product Name" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" aria-label="Select Category">
+                <option disabled>-- Select Category --</option>
+                <option selected value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+                <option value="4">Category 4</option>
+                <option value="5">Category 5</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="stock" class="form-label">Stock</label>
+              <input type="number" id="stock" class="form-control" value="25" placeholder="ex: 99" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="buyPrice" class="form-label">Buy Price</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text">Rp</span>
+                <input type="number" id="buyPrice" class="form-control" value="39.500" placeholder="ex: 15000"
+                  aria-label="Buy Price" />
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="sellPrice" class="form-label">Sell Price</label>
+              <div class="input-group input-group-merge">
+                <span class="input-group-text">Rp</span>
+                <input type="number" id="sellPrice" class="form-control" value="47.500" placeholder="ex: 20000"
+                  aria-label="Sell Price" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mb-0">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" rows="3"
+                placeholder="Enter Description...">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->

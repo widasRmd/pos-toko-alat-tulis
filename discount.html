@@ -32,6 +32,8 @@
   <!-- Vendors CSS -->
   <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
@@ -81,7 +83,7 @@
 
           <!-- Purchase Order -->
           <li class="menu-item">
-            <a href="#" class="menu-link">
+            <a href="purchase-order.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i>
               <div data-i18n="Purchase Order">Purchase Order</div>
             </a>
@@ -121,6 +123,11 @@
                 </a>
               </li>
               <li class="menu-item">
+                <a href="capital.html" class="menu-link">
+                  <div data-i18n="Restock">Capital History</div>
+                </a>
+              </li>
+              <li class="menu-item">
                 <a href="other-history.html" class="menu-link">
                   <div data-i18n="Other">Other History</div>
                 </a>
@@ -156,18 +163,10 @@
           </li>
 
           <!-- Product -->
-          <li class="menu-item">
+          <li class="menu-item mb-5">
             <a href="product.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-package"></i>
               <div data-i18n="Product">Product</div>
-            </a>
-          </li>
-
-          <!-- Capital History -->
-          <li class="menu-item mb-5">
-            <a href="capital.html" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-history"></i>
-              <div data-i18n="Capital History">Capital History</div>
             </a>
           </li>
 
@@ -319,7 +318,7 @@
                       aria-label="Search..." />
                   </div>
                 </div>
-                <!-- Button Delete -->
+                <!-- Sort By -->
                 <div class="col-2 text-end">
                   <select class="form-select" id="sortBySelect" aria-label="Sort by">
                     <option selected disabled value="">Sort by</option>
@@ -339,10 +338,10 @@
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </div>
                       </th>
-                      <th style="width: 30%;">Discount Name</th>
-                      <th style="width: 5%;">Discount Type</th>
-                      <th style="width: 30%;">Amount</th>
-                      <th style="width: 15%;">Product</th>
+                      <th style="width: 20%;">Discount Name</th>
+                      <th style="width: 10%;">Discount Type</th>
+                      <th style="width: 15%;">Amount</th>
+                      <th style="width: 20%;">Product</th>
                       <th style="width: 10%;">Status</th>
                       <th style="width: 5%;">Action</th>
                     </tr>
@@ -357,7 +356,40 @@
                       <td><strong>Discount 1</strong></td>
                       <td>Percentage (%)</td>
                       <td>15%</td>
-                      <td>Product 1</td>
+                      <td>
+                        <ul class="list-unstyled">
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 1
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 2
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 3
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 1
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 2
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 3
+                            </span>
+                          </li>
+                        </ul>
+                      </td>
                       <td><span class="badge bg-label-success">Active</span></td>
                       <td>
                         <div class="dropdown">
@@ -383,7 +415,25 @@
                       <td><strong>Discount 2</strong></td>
                       <td>Fixed (Rp)</td>
                       <td>Rp 5,500</td>
-                      <td>Product 2</td>
+                      <td>
+                        <ul class="list-unstyled">
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 1
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 2
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 3
+                            </span>
+                          </li>
+                        </ul>
+                      </td>
                       <td><span class="badge bg-label-success">Active</span></td>
                       <td>
                         <div class="dropdown">
@@ -409,7 +459,20 @@
                       <td><strong>Discount 3</strong></td>
                       <td>Percentage (%)</td>
                       <td>1%</td>
-                      <td>Product 3</td>
+                      <td>
+                        <ul class="list-unstyled">
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 1
+                            </span>
+                          </li>
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 2
+                            </span>
+                          </li>
+                        </ul>
+                      </td>
                       <td><span class="badge bg-label-danger">Expired</span></td>
                       <td>
                         <div class="dropdown">
@@ -435,7 +498,15 @@
                       <td><strong>Discount 4</strong></td>
                       <td>Fixed (Rp)</td>
                       <td>Rp 23,300</td>
-                      <td>Product 4</td>
+                      <td>
+                        <ul class="list-unstyled">
+                          <li class="m-1">
+                            <span class="badge bg-label-info">
+                              Product 1
+                            </span>
+                          </li>
+                        </ul>
+                      </td>
                       <td><span class="badge bg-label-danger">Expired</span></td>
                       <td>
                         <div class="dropdown">
@@ -525,22 +596,17 @@
 
         <!-- Modal Body -->
         <div class="modal-body">
-          <div class="row g-md-2">
-            <div class="col-md-6 mb-3">
-              <label for="category" class="form-label">Category</label>
-              <select class="form-select" id="category" aria-label="Select Category">
-                <option selected disabled>-- Select Category --</option>
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
-                <option value="3">Category 3</option>
-                <option value="4">Category 4</option>
-                <option value="5">Category 5</option>
-              </select>
+          <div class="row">
+            <div class="col mb-3">
+              <label for="discountName" class="form-label">Discount Name</label>
+              <input type="text" id="discountName" class="form-control" placeholder="Enter Discount Name" />
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="product" class="form-label">Product</label>
-              <select class="form-select" id="product" aria-label="Select Product">
-                <option selected disabled>-- Select Product --</option>
+          </div>
+          <div class="row">
+            <div class="col mb-3">
+              <label for="select-product-new" class="form-label">Product</label>
+              <select class="form-select select-product-new" multiple id="select-product-new"
+                aria-label="Select Product" style="width: 100%;">
                 <option value="1">Product 1</option>
                 <option value="2">Product 2</option>
                 <option value="3">Product 3</option>
@@ -614,27 +680,23 @@
 
         <!-- Modal Body -->
         <div class="modal-body">
-          <div class="row g-md-2">
-            <div class="col-md-6 mb-3">
-              <label for="category" class="form-label">Category</label>
-              <select class="form-select" id="category" aria-label="Select Category">
-                <option selected disabled>-- Select Category --</option>
-                <option value="1">Category 1</option>
-                <option selected value="2">Category 2</option>
-                <option value="3">Category 3</option>
-                <option value="4">Category 4</option>
-                <option value="5">Category 5</option>
-              </select>
+          <div class="row">
+            <div class="col mb-3">
+              <label for="discountName" class="form-label">Discount Name</label>
+              <input type="text" id="discountName" class="form-control" value="Promo Kemerdekaan"
+                placeholder="Enter Discount Name" />
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="product" class="form-label">Product</label>
-              <select class="form-select" id="product" aria-label="Select Product">
-                <option selected disabled>-- Select Product --</option>
+          </div>
+          <div class="row">
+            <div class="col mb-3">
+              <label for="select-product-edit" class="form-label">Product</label>
+              <select class="form-select select-product-edit" multiple id="select-product-edit"
+                aria-label="Select Product" style="width: 100%;">
                 <option value="1">Product 1</option>
-                <option value="2">Product 2</option>
+                <option selected value="2">Product 2</option>
                 <option value="3">Product 3</option>
                 <option selected value="4">Product 4</option>
-                <option value="5">Product 5</option>
+                <option selected value="5">Product 5</option>
               </select>
             </div>
           </div>
@@ -653,7 +715,7 @@
               <label for="fixed" class="form-label">Amount</label>
               <div class="input-group input-group-merge">
                 <span class="input-group-text">Rp</span>
-                <input type="number" id="fixed" class="form-control" value="99.900" placeholder="ex: 20000"
+                <input type="number" id="fixed" class="form-control" value="15000" placeholder="ex: 20000"
                   aria-label="Fixed" />
               </div>
             </div>
@@ -672,8 +734,8 @@
           <div class="row ps-1">
             <div class="col-md-5 mt-2">
               <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="discountStatus" checked />
-                <label class="form-check-label" for="discountStatus">Discount Status</label>
+                <input class="form-check-input" type="checkbox" id="discountStatusAdd" />
+                <label class="form-check-label" for="discountStatusAdd">Discount Status</label>
               </div>
             </div>
           </div>
@@ -706,6 +768,25 @@
 
   <!-- Main JS -->
   <script src="../assets/js/main.js"></script>
+
+  <!-- Select -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $('.select-product-new').select2({
+      placeholder: 'Select Product',
+      allowClear: 'true',
+      dropdownParent: '#addDiscount',
+      closeOnSelect: false,
+    });
+  </script>
+  <script>
+    $('.select-product-edit').select2({
+      placeholder: 'Select Product',
+      allowClear: 'true',
+      dropdownParent: '#editDiscount',
+      closeOnSelect: false,
+    });
+  </script>
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

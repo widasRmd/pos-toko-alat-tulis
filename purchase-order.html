@@ -32,6 +32,8 @@
   <!-- Vendors CSS -->
   <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
@@ -121,6 +123,11 @@
                 </a>
               </li>
               <li class="menu-item">
+                <a href="capital.html" class="menu-link">
+                  <div data-i18n="Restock">Capital History</div>
+                </a>
+              </li>
+              <li class="menu-item">
                 <a href="other-history.html" class="menu-link">
                   <div data-i18n="Other">Other History</div>
                 </a>
@@ -156,18 +163,10 @@
           </li>
 
           <!-- Product -->
-          <li class="menu-item">
+          <li class="menu-item mb-5">
             <a href="product.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-package"></i>
               <div data-i18n="Product">Product</div>
-            </a>
-          </li>
-
-          <!-- Capital History -->
-          <li class="menu-item mb-5">
-            <a href="capital.html" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-history"></i>
-              <div data-i18n="Capital History">Capital History</div>
             </a>
           </li>
 
@@ -522,8 +521,16 @@
         <div class="modal-body">
           <div class="row">
             <div class="col mb-3">
-              <label for="productName" class="form-label">Product Name</label>
-              <input type="text" id="productName" class="form-control" placeholder="Enter Product Name" />
+              <label for="select-product" class="form-label">Product</label>
+              <select class="form-select select-product" id="select-product" aria-label="Select Product"
+                style="width: 100%;">
+                <option></option>
+                <option value="1">Product 1</option>
+                <option value="2">Product 2</option>
+                <option value="3">Product 3</option>
+                <option value="4">Product 4</option>
+                <option value="5">Product 5</option>
+              </select>
             </div>
           </div>
           <div class="row g-md-2">
@@ -626,6 +633,19 @@
 
   <!-- Main JS -->
   <script src="../assets/js/main.js"></script>
+
+  <!-- Select -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    $('.select-product').select2({
+      placeholder: 'Select Product',
+      allowClear: 'true',
+      dropdownParent: '#addOrder',
+      closeOnSelect: false,
+    });
+  </script>
+
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

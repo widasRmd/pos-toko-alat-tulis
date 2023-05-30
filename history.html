@@ -43,7 +43,6 @@
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <!-- Menu -->
-
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
           <a href="index.html" class="app-brand-link">
@@ -122,6 +121,11 @@
                 </a>
               </li>
               <li class="menu-item">
+                <a href="capital.html" class="menu-link">
+                  <div data-i18n="Restock">Capital History</div>
+                </a>
+              </li>
+              <li class="menu-item">
                 <a href="other-history.html" class="menu-link">
                   <div data-i18n="Other">Other History</div>
                 </a>
@@ -157,18 +161,10 @@
           </li>
 
           <!-- Product -->
-          <li class="menu-item">
+          <li class="menu-item mb-5">
             <a href="product.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-package"></i>
               <div data-i18n="Product">Product</div>
-            </a>
-          </li>
-
-          <!-- Capital History -->
-          <li class="menu-item mb-5">
-            <a href="capital.html" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-history"></i>
-              <div data-i18n="Capital History">Capital History</div>
             </a>
           </li>
 
@@ -302,32 +298,41 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 d-flex align-self-center justify-content-md-end">
-                <div class="row me-1">
-                  <label for="dateFrom" class="col-md-2 col-form-label">From</label>
-                  <div class="col-md-10">
-                    <input class="form-control" type="date" id="dateFrom" />
+                <div class="row me-1 g-2">
+                  <div class="col-5">
+                    <div class="input-group input-group-merge">
+                      <span class="input-group-text">From</span>
+                      <input type="date" id="dateFrom" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-5">
+                    <div class="input-group input-group-merge">
+                      <span class="input-group-text">To</span>
+                      <input type="date" id="dateTo" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <button type="button" class="btn btn-primary">Submit</button>
                   </div>
                 </div>
-                <div class="row me-1">
-                  <label for="dateTo" class="col-md-2 col-form-label">To</label>
-                  <div class="col-md-10 ps-md-0">
-                    <input class="form-control" type="date" id="dateTo" />
-                  </div>
-                </div>
-                <!-- <button type="button" class="btn btn-primary">Submit</button> -->
               </div>
             </div>
 
             <!-- Tab Menu -->
-            <div class="row">
+            <div class="row d-none d-md-block">
               <div class="col">
                 <ul class="nav nav-pills flex-column flex-md-row mb-3">
                   <li class="nav-item">
-                    <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-history me-1"></i> History</a>
+                    <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-history me-1"></i>
+                      Sales History</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="restock-history.html"><i class="bx bx-history me-1"></i>
                       Restock History</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="capital.html"><i class="bx bx-history me-1"></i>
+                      Capital History</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="other-history.html"><i class="bx bx-history me-1"></i>

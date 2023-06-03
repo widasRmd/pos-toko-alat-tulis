@@ -7,7 +7,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Category | Toko Alat Tulis</title>
+  <title>User | Toko Alat Tulis</title>
 
   <meta name="description" content="" />
 
@@ -32,6 +32,7 @@
   <!-- Vendors CSS -->
   <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
   <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
   <!-- Helpers -->
   <script src="../assets/vendor/js/helpers.js"></script>
@@ -72,15 +73,15 @@
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin</span></li>
 
           <!-- Inventory -->
-          <li class="menu-item ">
-            <a href="inventory.html" class="menu-link">
+          <li class="menu-item">
+            <a href="#" class="menu-link">
               <i class="menu-icon tf-icons bx bx-package"></i>
               <div data-i18n="Inventory">Inventory</div>
             </a>
           </li>
 
           <!-- Purchase Order -->
-          <li class="menu-item ">
+          <li class="menu-item">
             <a href="purchase-order.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-purchase-tag-alt"></i>
               <div data-i18n="Purchase Order">Purchase Order</div>
@@ -88,8 +89,8 @@
           </li>
 
           <!-- Category -->
-          <li class="menu-item active">
-            <a href="#" class="menu-link">
+          <li class="menu-item">
+            <a href="category.html" class="menu-link">
               <i class="menu-icon tf-icons bx bx-category-alt"></i>
               <div data-i18n="Category">Category</div>
             </a>
@@ -134,8 +135,8 @@
           </li>
 
           <!-- User -->
-          <li class="menu-item">
-            <a href="user.html" class="menu-link">
+          <li class="menu-item active">
+            <a href="#" class="menu-link">
               <i class="menu-icon tf-icons bx bx-user-circle"></i>
               <div data-i18n="Supplier">User</div>
             </a>
@@ -300,14 +301,14 @@
                 <div class="d-sm-flex py-3">
                   <h4 class="fw-bold mb-0">
                     <span class="text-muted fw-light">Dashboard / </span>
-                    Category
+                    Users
                   </h4>
                 </div>
               </div>
               <div class="col-12 col-md-6 align-self-center text-center text-sm-end">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newCategory">
+                <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#addUser">
                   <span class="tf-icons bx bx-plus-circle"></span>
-                  New Category
+                  Add User
                 </button>
               </div>
             </div>
@@ -322,12 +323,28 @@
                       aria-label="Search..." />
                   </div>
                 </div>
-                <!-- Button Delete -->
-                <div class="col text-end">
-                  <button type="button" class="btn btn-outline-danger">
-                    <span class="tf-icons bx bx-trash"></span>&nbsp; Delete
-                  </button>
+
+                <div class="col">
+                  <div class="row g-2">
+                    <!-- Button Delete -->
+                    <div class="col text-end">
+                      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal">
+                        <span class="tf-icons bx bx-trash"></span>&nbsp; Delete
+                      </button>
+                    </div>
+
+                    <!-- Sort by -->
+                    <div class="col-3">
+                      <select class="form-select" id="sortBySelect" aria-label="Sort by">
+                        <option selected disabled value="">Sort by</option>
+                        <option value="1">Name A-Z</option>
+                        <option value="2">Name Z-A</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
+
               </div>
               <!-- Table Body -->
               <div class="table-responsive text-nowrap py-3">
@@ -339,9 +356,12 @@
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </div>
                       </th>
-                      <th style="width: 60%;">Category Name</th>
-                      <th style="width: 20%;">Total Items</th>
-                      <th style="width: 15%;">Action</th>
+                      <th style="width: 20%;">Name</th>
+                      <th style="width: 10%;">Role</th>
+                      <th style="width: 15%;">Email</th>
+                      <th style="width: 10%;">Phone</th>
+                      <th style="width: 10%;">Gender</th>
+                      <th style="width: 5%;">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -351,8 +371,11 @@
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </div>
                       </td>
-                      <td>Category 1</td>
-                      <td>205</td>
+                      <td><strong>User 1</strong></td>
+                      <td>Staff</td>
+                      <td>user1@mail.com</td>
+                      <td>08123456789</td>
+                      <td>Female</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -360,7 +383,7 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
-                              data-bs-target="#editCategory">
+                              data-bs-target="#editUser">
                               <i class="bx bx-edit-alt me-1"></i>
                               Edit
                             </a>
@@ -376,8 +399,11 @@
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </div>
                       </td>
-                      <td>Category 2</td>
-                      <td>1,586</td>
+                      <td><strong>User 2</strong></td>
+                      <td>Admin</td>
+                      <td>user2@mail.com</td>
+                      <td>08123456789</td>
+                      <td>Male</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -385,13 +411,12 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
-                              data-bs-target="#editCategory">
+                              data-bs-target="#editUser">
                               <i class="bx bx-edit-alt me-1"></i>
                               Edit
                             </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                              Delete
-                            </a>
+                              Delete</a>
                           </div>
                         </div>
                       </td>
@@ -402,8 +427,11 @@
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </div>
                       </td>
-                      <td>Category 3</td>
-                      <td>205,521</td>
+                      <td><strong>User 3</strong></td>
+                      <td>Staff</td>
+                      <td>user3@mail.com</td>
+                      <td>08123456789</td>
+                      <td>Male</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -411,13 +439,12 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
-                              data-bs-target="#editCategory">
+                              data-bs-target="#editUser">
                               <i class="bx bx-edit-alt me-1"></i>
                               Edit
                             </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                              Delete
-                            </a>
+                              Delete</a>
                           </div>
                         </div>
                       </td>
@@ -428,8 +455,11 @@
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         </div>
                       </td>
-                      <td>Category 4</td>
-                      <td>15</td>
+                      <td><strong>User 4</strong></td>
+                      <td>Staff</td>
+                      <td>user4@mail.com</td>
+                      <td>08123456789</td>
+                      <td>Female</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -437,65 +467,12 @@
                           </button>
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
-                              data-bs-target="#editCategory">
+                              data-bs-target="#editUser">
                               <i class="bx bx-edit-alt me-1"></i>
                               Edit
                             </a>
                             <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                              Delete
-                            </a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        </div>
-                      </td>
-                      <td>Category 5</td>
-                      <td>2,525</td>
-                      <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-edit"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
-                              data-bs-target="#editCategory">
-                              <i class="bx bx-edit-alt me-1"></i>
-                              Edit
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                              Delete
-                            </a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        </div>
-                      </td>
-                      <td>Category 6</td>
-                      <td>869</td>
-                      <td>
-                        <div class="dropdown">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                            <i class="bx bx-edit"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal"
-                              data-bs-target="#editCategory">
-                              <i class="bx bx-edit-alt me-1"></i>
-                              Edit
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>
-                              Delete
-                            </a>
+                              Delete</a>
                           </div>
                         </div>
                       </td>
@@ -504,16 +481,52 @@
                   <tfoot class="table-border-bottom-0">
                     <tr>
                       <th></th>
-                      <th>Category Name</th>
-                      <th>Total Items</th>
+                      <th>Name</th>
+                      <th>Role</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Gender</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
                 </table>
               </div>
+              <!-- Pagination -->
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="demo-inline-spacing">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item prev">
+                          <a class="page-link" href="javascript:void(0);"><i
+                              class="tf-icon bx bx-chevrons-left"></i></a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">2</a>
+                        </li>
+                        <li class="page-item active">
+                          <a class="page-link" href="javascript:void(0);">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">4</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="javascript:void(0);">5</a>
+                        </li>
+                        <li class="page-item next">
+                          <a class="page-link" href="javascript:void(0);"><i
+                              class="tf-icon bx bx-chevrons-right"></i></a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
           <!-- / Content -->
 
           <!-- Footer -->
@@ -556,14 +569,14 @@
   </div>
   <!-- / Layout wrapper -->
 
-  <!-- Modal New Category -->
-  <div class="modal fade" id="newCategory" tabindex="-1" aria-hidden="true">
+  <!-- Modal New Product -->
+  <div class="modal fade" id="addUser" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="modalCenterTitle">New Category</h5>
+          <h5 class="modal-title" id="modalCenterTitle">New User</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
@@ -571,8 +584,36 @@
         <div class="modal-body">
           <div class="row">
             <div class="col mb-3">
-              <label for="categoryName" class="form-label">Category Name</label>
-              <input type="text" id="categoryName" class="form-control" placeholder="Enter Category Name" />
+              <label for="productName" class="form-label">Name</label>
+              <input type="text" id="productName" class="form-control" placeholder="Enter Name" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="role" class="form-label">Role</label>
+              <select class="form-select" id="role" aria-label="Select Role">
+                <option selected disabled>-- Select Role --</option>
+                <option value="ADMIN">Admin</option>
+                <option value="USER">Staff</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" placeholder="ex: example@yourmail.com" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="number" id="phone" class="form-control" placeholder="ex: 08123456789" />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select class="form-select" id="gender" aria-label="Select Gender">
+                <option selected disabled>-- Select Gender --</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+              </select>
             </div>
           </div>
         </div>
@@ -589,14 +630,14 @@
     </div>
   </div>
 
-  <!-- Modal Edit Category -->
-  <div class="modal fade" id="editCategory" tabindex="-1" aria-hidden="true">
+  <!-- Modal Edit Product -->
+  <div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h5 class="modal-title" id="modalCenterTitle">Edit Category</h5>
+          <h5 class="modal-title" id="modalCenterTitle">Edit User</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
@@ -604,9 +645,37 @@
         <div class="modal-body">
           <div class="row">
             <div class="col mb-3">
-              <label for="categoryName" class="form-label">Category Name</label>
-              <input type="text" id="categoryName" class="form-control" value="Category 1"
-                placeholder="Enter Category Name" />
+              <label for="productName" class="form-label">Name</label>
+              <input type="text" id="productName" class="form-control" value="User 3" placeholder="Enter Name" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="role" class="form-label">Role</label>
+              <select class="form-select" id="role" aria-label="Select Role">
+                <option selected disabled>-- Select Role --</option>
+                <option value="ADMIN" selected>Admin</option>
+                <option value="USER">Staff</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" value="user3@mail.com"
+                placeholder="ex: example@yourmail.com" />
+            </div>
+          </div>
+          <div class="row g-md-2">
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="number" id="phone" class="form-control" value="08123456789" placeholder="ex: 08123456789" />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select class="form-select" id="gender" aria-label="Select Gender">
+                <option selected disabled>-- Select Gender --</option>
+                <option value="MALE">Male</option>
+                <option value="FEMALE" selected>Female</option>
+              </select>
             </div>
           </div>
         </div>
@@ -617,6 +686,37 @@
             Cancel
           </button>
           <button type="button" class="btn btn-primary">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Delete Conformation -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="col">
+            <h5 class="modal-title text-center" id="modalCenterTitle">Delete Confirmation</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+              <p class="mb-0 text-center">Are you surewant to delete this user?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Okay</button>
         </div>
 
       </div>
@@ -638,6 +738,18 @@
 
   <!-- Main JS -->
   <script src="../assets/js/main.js"></script>
+
+  <!-- Select -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    $('.select-product').select2({
+      placeholder: 'Select Product',
+      allowClear: 'true',
+      dropdownParent: '#newSubstract',
+      closeOnSelect: false,
+    });
+  </script>
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
